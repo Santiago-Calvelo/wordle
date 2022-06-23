@@ -1,66 +1,67 @@
-
 // palabras para el juego, agregar las que quieran siempre de 5 letras
 // es un array de strings (dict por dictionary)
 let dict = [
-  'Gatos',
-  'Papas',
-  'Fuego',
-  'Huevo',
-  'Color',
-  'Casas',
-  'Arbol',
-  'Nueve',
-  'Zorro',
-  'Remar',
-  'Locro',
-  'Jamon',
-  'Feliz',
-  'Cinco',
-  'Tonto',
-  'Cuero',
-  'Volar',
-  'Vuelo',
-  'Avion',
-  'Genio',
-  'Pibes',
-  'Ratas',
-  'Sapos',
-  'Patos',
-  'Temas',
-  'Cazar',
-  'Matar',
-  'Robar',
-  'Siete',
-  'Trece',
-  'Casar',
-  'Almas',
-  'Alaba',
-  'Carta',
-  'Sopas',
-  'Raton',
-  'Ratas',
-  'Pozos',
-  'Zebra',
-  'Dados',
-  'Darlo',
-  'Marte',
-  'Pizza',
-  'Copas'
+  'gatos',
+  'papas',
+  'fuego',
+  'huevo',
+  'color',
+  'casas',
+  'arbol',
+  'nueve',
+  'zorro',
+  'remar',
+  'locro',
+  'jamon',
+  'feliz',
+  'cinco',
+  'tonto',
+  'cuero',
+  'volar',
+  'vuelo',
+  'avion',
+  'genio',
+  'pibes',
+  'ratas',
+  'sapos',
+  'patos',
+  'temas',
+  'cazar',
+  'matar',
+  'robar',
+  'siete',
+  'trece',
+  'casar',
+  'almas',
+  'alaba',
+  'carta',
+  'sopas',
+  'raton',
+  'ratas',
+  'pozos',
+  'zebra',
+  'dados',
+  'darlo',
+  'marte',
+  'pizza',
+  'copas'
 ];
 // ocultar perdiste y Ganaste
 document.getElementById('win').style.display = 'none';
 document.getElementById('perdiste').style.display = 'none';
 //boton de recargar
-let boton_recargar = document.getElementById('Boton_Recargar')
-boton_recargar.hidden = true
+let boton_recargar = document.getElementById('Boton_Recargar');
+boton_recargar.hidden = true;
+let text = document.getElementById('res');
 // intentos
 let indice = Math.trunc(Math.random() * 43);
 let bien = dict[indice];
 console.log(bien);
-let res = document.getElementById('res').value;
+let respuesta = document.getElementById('res').value;
 let intentos = 0;
 function handleChange(e) {
-  let res = document.getElementById('res').value;
+  let respuesta = document.getElementById('res').value;
+  let res = respuesta.toLowerCase()
   if (res.length != 5) {
     alert("Tienen que ser 5 letras");
     return;
@@ -91,11 +92,13 @@ function handleChange(e) {
     if(bien == res) {
       document.getElementById('win').style.display = 'block';
       boton_recargar.hidden = false;
+      text.hidden = true;
     }
     intentos++;
     if (intentos == 6) {
       document.getElementById('perdiste').style.display = 'block';
       boton_recargar.hidden = false;
+      text.hidden = true;
     }
   }
 }
