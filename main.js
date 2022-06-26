@@ -137,7 +137,7 @@ let boton_recargar = document.getElementById('Boton_Recargar');
 boton_recargar.hidden = true;
 let text = document.getElementById('res');
 // intentos
-let indice = Math.trunc(Math.random() * 121);
+let indice = Math.trunc(Math.random() * 127);
 let bien = dict[indice];
 console.log(bien);
 let respuesta = document.getElementById('res').value;
