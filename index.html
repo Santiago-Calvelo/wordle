@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Wordle</title>
+  </head>
+  <body>
+    <!-- solucion     -->
+    <h1>Wordle</h1>
+    <input id="res" onchange="handleChange(event)" type="text" name="Wordle" maxlength="5">
+    <div id="game">
+    </div>
+    <div id="win">
+      <p>Ganaste</p>
+    </div>
+    <div id="perdiste">
+      <p> Perdiste </p>
+    </div>
+    <button type="button" onclick="recargar()" id="Boton_Recargar">Intentar denuevo</button>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
